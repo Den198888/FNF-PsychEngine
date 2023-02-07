@@ -33,6 +33,7 @@ import flixel.math.FlxMath;
 import flixel.util.FlxSave;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.system.FlxAssets.FlxShader;
+import flixel.system.FlxShader;
 
 #if (!flash && sys)
 import flixel.addons.display.FlxRuntimeShader;
@@ -278,7 +279,7 @@ class FunkinLua {
 			}
 
 			var killMe:Array<String> = obj.split('.');
-			var leObj:FlxSprite = getObjectDirectly(killMe[0]);
+			var leObj:FlxBasic = getObjectDirectly(killMe[0]);
 			if(killMe.length > 1) {
 				leObj = getVarInArray(getPropertyLoopThingWhatever(killMe), killMe[killMe.length-1]);
 			}
